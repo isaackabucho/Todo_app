@@ -2,6 +2,7 @@
 namespace App\DbRepo;
 use App\Models\Todo;
 use App\Notifications\TodoDeletedNotification;
+use Illuminate\Support\Facades\DB;
 
 
 class TodoRepo
@@ -43,9 +44,40 @@ class TodoRepo
         return ($todo->is_completed) ? $todo->update(['is_completed' => false]) : $todo->update(['is_completed'=>true]);
     }
 
-    public function delete($todoId){
-        return $this->getTodo($todoId)->delete();
+
+
+public function delete($todoId){
+    // Start a database transaction
+    DB::beginTransaction();
+
+    try {
+        $todo = Todo::findOrFail($todoId);
+
+        // Check if $todo is not null
+        if ($todo) {
+            if ($todo->user) {
+                $user = $todo->user;
+                $todo->delete();
+                // Queue the notification to be sent to the user
+                $user->notify(new TodoDeletedNotification());
+            } else {
+                throw new \Exception('Todo does not have an associated user.');
+            }
+        } else {
+            throw new \Exception('Todo does not exist.');
+        }
+
+        // Commit the transaction if all operations succeed
+        DB::commit();
+    } catch (\Exception $e) {
+        // Rollback the transaction if an error occurs
+        DB::rollback();
+        throw $e;
     }
+}
+
+    
+    
 
     public function getTodosById($userId){
         $todos=Todo::where('user_id',$userId)->get();
