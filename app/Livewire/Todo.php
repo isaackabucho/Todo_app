@@ -1,7 +1,8 @@
 <?php
 
 namespace App\Livewire;
-
+use App\Models\User;
+use Illuminate\Support\Facades\Auth;
 use Livewire\Component;
 use App\DbRepo\TodoRepo;
 use Livewire\Attributes\Rule;
@@ -20,6 +21,13 @@ class Todo extends Component
 
     public $edit;
 
+    public $userId; // public property to hold the user ID
+
+    public function mount($userId)
+    {
+        $this->userId = $userId;
+    }
+
     public function boot(TodoRepo $repo)
     {
         $this->repo = $repo;
@@ -34,7 +42,7 @@ class Todo extends Component
 
     public function editTodo($todoId){
         $this->edit =$todoId;
-        $this->currentEditTodo = $this->repo->getTodo($todoId)->todo;
+        $this->currentEditTodo = $this->repo->getUserTodo($todoId)->todo;
     }
 
     public function updateTodo($todoId){
@@ -56,9 +64,23 @@ class Todo extends Component
         return $this->repo->completed($todoId);
     }
 
+    // public function render()
+    // {
+    //     $todos = $this->repo->getAllTodos();
+    //     return view('livewire.todo', compact('todos'));
+    // }
+
     public function render()
-    {
-        $todos = $this->repo->getAllTodos();
+{
+    $user = Auth::user();
+    if ($user->is_admin && $this->userId) {
+        $todos = $this->repo->getAllUserTodos($this->userId);
+        return view('livewire.admin-todo', compact('todos', 'users'));
+    } else {
+        $todos = $this->repo->getUserTodos();
         return view('livewire.todo', compact('todos'));
     }
+}
+
+    
 }
