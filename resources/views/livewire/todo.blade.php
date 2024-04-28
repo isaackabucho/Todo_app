@@ -29,11 +29,6 @@
                             
                             @else
                                 <span @if($todo->is_completed) class='text-green-600' style="text-decoration: line-through;" @endif>{{ $todo->todo }}</span>
-                                {{-- Display user's name --}}
-                                {{-- @if(auth()->user()->role=="Admin")
-                                    <small class="ml-3 float-right"> -  ({{ $todo->user->name }})</small>
-                                @endif --}}
-        
                             @endif
                     </div>
 
@@ -60,9 +55,6 @@
                         @endif
                     @endif
                 </div>
-                
-
-               
             </div>
 
         @empty

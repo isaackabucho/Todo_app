@@ -25,7 +25,6 @@ class TodoDeletedNotification extends Notification
     {
         return (new MailMessage)
             ->line('Your todo has been deleted by the admin.')
-            // ->action('View Todos', url('/todos'))
             ->line('Thank you for using our application!');
     }
 }
