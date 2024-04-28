@@ -7,7 +7,7 @@ use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Notifications\Messages\MailMessage;
 use Illuminate\Notifications\Notification;
 
-class TodoDeletedNotification extends Notification implements ShouldQueue
+class TodoDeletedNotification extends Notification
 {
     use Queueable;
 
@@ -25,7 +25,7 @@ class TodoDeletedNotification extends Notification implements ShouldQueue
     {
         return (new MailMessage)
             ->line('Your todo has been deleted by the admin.')
-            ->action('View Todos', url('/todos'))
+            // ->action('View Todos', url('/todos'))
             ->line('Thank you for using our application!');
     }
 }

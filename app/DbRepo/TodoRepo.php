@@ -1,5 +1,6 @@
 <?php 
 namespace App\DbRepo;
+
 use App\Models\Todo;
 use App\Notifications\TodoDeletedNotification;
 use Illuminate\Support\Facades\DB;
@@ -22,10 +23,10 @@ class TodoRepo
     public function getAllTodos(){
         // Check if the user is an admin
         if(auth()->user()->role === 'Admin') {
-            $todos = Todo::latest()->get();
+            $todos = Todo::latest()->paginate(10);
         } else {
             // For non-admin users, only retrieve their own todos
-            $todos = Todo::where('user_id', auth()->id())->latest()->get();
+            $todos = Todo::where('user_id', auth()->id())->latest()->paginate(10);
         }
     
         return $todos;

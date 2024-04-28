@@ -12,7 +12,9 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-    
+Route::view('users', 'users')
+    ->middleware(['auth', 'verified'])
+    ->name('users');
 
 
 require __DIR__.'/auth.php';

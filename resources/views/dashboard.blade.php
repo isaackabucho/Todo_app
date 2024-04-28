@@ -13,8 +13,8 @@
             {{-- Admin links --}}
             @if(auth()->user()->role == 'Admin')
                 <ul class="flex gap-4">
-                    <h3><li><a href="#" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">Users</a></li></h3> 
-                    <h3><li><a href="" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">All Todos</a></li></h3>
+                    <h3><li><a href="/users" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">Users</a></li></h3> 
+                    <h3><li><a href="/dashboard" class="text-gray-600 hover:text-gray-800 dark:text-gray-400 dark:hover:text-gray-200">All Todos</a></li></h3>
                 </ul>
             @endif
         </div>
@@ -28,8 +28,8 @@
 
                 {{-- Todo list section --}}
                 <div class="w-full">
-                    <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg max-w-screen-sm mx-auto">
-                        <div class="p-6 text-gray-900 dark:text-gray-100">
+                    <div class="overflow-hidden shadow-sm sm:rounded-lg max-w-screen-sm mx-auto">
+                        <div class="text-gray-900 dark:text-gray-100">
                             @livewire('todo')
                         </div>
                     </div>
