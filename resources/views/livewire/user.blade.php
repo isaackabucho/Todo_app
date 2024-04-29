@@ -79,8 +79,8 @@
             </div>
             <div class="w-2/12">
                 <div class="flex justify-start space-x-2">
-                    <button class="px-3 py-1 bg-white text-[13px] border border-gray-300 rounded-md hover:bg-gray-400">EDIT</button>
-                    <button class="px-3 py-1 bg-red-600 text-white text-[13px] rounded-md hover:bg-red-500">DELETE</button>
+                    <button class="px-3 py-1 bg-white text-[13px] border border-gray-300 rounded-md hover:bg-gray-400" wire:click="editUser({{ $user->id }})">EDIT</button>
+                    <button class="px-3 py-1 bg-red-600 text-white text-[13px] rounded-md hover:bg-red-500" wire:click="deleteUser({{ $user->id }})">DELETE</button>
                 </div>
             </div>
         </div>
@@ -126,3 +126,19 @@
         
     </div>
 </div>
+
+@push('scripts')
+<script>
+    document.addEventListener('livewire:load', function () {
+        Livewire.on('confirmDelete', userId => {
+            if (confirm('Are you sure you want to delete this user?')) {
+                Livewire.emit('deleteUser', userId);
+            }
+        });
+
+        Livewire.on('userDeleted', () => {
+            alert('User deleted successfully.');
+        });
+    });
+</script>
+@endpush

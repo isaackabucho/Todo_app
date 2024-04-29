@@ -20,6 +20,6 @@ class Users extends Component
 
 
         // dd('isaac');
-        return view('users');
+        // return view('users');
     }
 }
