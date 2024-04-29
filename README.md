@@ -8,6 +8,7 @@
 </p>
 
 
+
 # A Todo-List App
 This project is a simple Todo app built with Laravel and Livewire for users to manage teheir todos.
 
@@ -20,7 +21,7 @@ This project is a simple Todo app built with Laravel and Livewire for users to m
 -Livewire 3
 ##  Todo-App Pages
 1. Landing page
-![Landing](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/Landing_page.png?raw=true)
+![Landing](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/updlandingpage.png?raw=true)
 
 2. Login page
 ![Login](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/Login_page.png?raw=true)
@@ -36,6 +37,9 @@ This project is a simple Todo app built with Laravel and Livewire for users to m
 
 6. Admin dashboard
 ![Admin dashboard](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/Admin_dashboard.png?raw=true)
+
+7. List and add Users
+![Users](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/user_list.png?raw=true)
 
 
 
