@@ -20,7 +20,7 @@ This project is a simple Todo app built with Laravel and Livewire for users to m
 -Livewire 3
 
 ## How to setup and run
--Install Laravell and necesary dependencies
+-Install Laravel and necesary dependencies
 
 -run 'php artisan serve'
 
