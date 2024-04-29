@@ -16,8 +16,9 @@
     </head>
     <body class="antialiased font-sans">
         <div class="bg-gray-10 text-black/50 dark:bg-black dark:text-white/50">
-            <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://laravel.com/assets/img/welcome/background.svg" />
-            <div class="relative min-h-screen flex flex-col items-center justify-center selection:bg-[#FF2D20] selection:text-white">
+            {{-- <img id="background" class="absolute -left-20 top-0 max-w-[877px]" src="https://us.123rf.com/450wm/279photo/279photo2101/279photo210100147/161943355-company-strategy-development-in-business-on-office-desk-background-top-view-mock-up.jpg?ver=6" /> --}}
+
+            <div class="relative min-h-screen flex flex-col items-center selection:bg-[#FF2D20] selection:text-white">
                 <div class="relative w-full max-w-2xl px-6 lg:max-w-7xl">
                     <header class="grid grid-cols-2 items-center gap-2 py-10 lg:grid-cols-3">
                         <div class="flex lg:justify-center lg:col-start-2">
@@ -28,7 +29,7 @@
                         @endif
                     </header>
 
-                    <main class="mt-6">
+                    {{-- <main class="mt-6">
                         <div class="grid gap-6 lg:grid-cols-2 lg:gap-8">
                             <a
                                 href="https://laravel.com/docs"
@@ -134,11 +135,35 @@
                                 </div>
                             </div>
                         </div>
-                    </main>
+                    </main> --}}
+                    <!-- Page Content -->
+                        <main class="flex-grow">
+                            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                                <!-- Your custom content here -->
+                                <div class="px-4 py-6 bg-white shadow-lg sm:rounded-lg">
+                                    <!-- Your custom welcome content here -->
+                                    <h1 class="text-3xl font-semibold text-gray-900">Welcome to Smart Todo App</h1>
+                                    <p class="mt-4 text-gray-600">Start managing your tasks efficiently!</p>
+                                </div>
+                            </div>
+                        </main>
+                        <!-- Footer -->
+                        <footer class="bg-white-800 py-4 w-full text-dark" 
+                                style="bottom: 0;
+                                display: block;
+                                position: fixed
+                                ">
+                            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-black">
+                                <div class="text-center text-black-800">
+                                    <!-- Your footer content here -->
+                                    &copy; 2024 Todo App. All rights reserved.
+                                </div>
+                            </div>
+                        </footer>
 
-                    <footer class="py-16 text-center text-sm text-black dark:text-white/70">
+                    {{-- <footer class="py-16 text-center text-sm text-black dark:text-white/70">
                         Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
-                    </footer>
+                    </footer> --}}
                 </div>
             </div>
         </div>

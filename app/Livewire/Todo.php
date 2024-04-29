@@ -20,6 +20,15 @@ class Todo extends Component
 
     public $edit;
 
+    public $users;
+
+    public $showUsers = false;
+
+    public function mount()
+    {
+        $this->users = $this->repo->getAllUsers();
+    }
+
     public function boot(TodoRepo $repo)
     {
         $this->repo = $repo;
@@ -32,10 +41,21 @@ class Todo extends Component
         $this->todo = '';
     }
 
-    public function editTodo($todoId){
-        $this->edit =$todoId;
-        $this->currentEditTodo = $this->repo->getTodo($todoId)->todo;
+    public function editTodo($todoId)
+    {
+        $todo = $this->repo->getTodo($todoId);
+    
+        // Check if the authenticated user is an admin
+        if (auth()->user()->role === 'Admin') {
+            $this->edit = $todoId;
+            $this->currentEditTodo = $todo->todo;
+        } else {
+            // Throw an error or display a message indicating that the user is not authorized to edit this todo
+            // For example:
+            session()->flash('error', 'You are not authorized to edit this todo.');
+        }
     }
+    
 
     public function updateTodo($todoId){
         $validated = $this->validateOnly('currentEditTodo');
@@ -56,9 +76,27 @@ class Todo extends Component
         return $this->repo->completed($todoId);
     }
 
+    public function getAllUsers()
+    {
+        $users=$this->repo->getAllUsers();
+        dd($users);
+
+        return $users;
+    }
+
     public function render()
     {
+        // Fetch data needed for rendering
         $todos = $this->repo->getAllTodos();
-        return view('livewire.todo', compact('todos'));
+        $users = $this->repo->getAllUsers();
+
+        if ($this->showUsers) {
+            // Render the users section
+            return view('livewire.users', compact('users'));
+        } else {
+            // Render the todos section
+            return view('livewire.todo', compact('todos'));
+        }
     }
+
 }

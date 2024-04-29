@@ -12,7 +12,7 @@ Route::view('profile', 'profile')
     ->middleware(['auth'])
     ->name('profile');
 
-Route::view('users', 'users')
+Route::view('users', 'livewire/users')
     ->middleware(['auth', 'verified'])
     ->name('users');
 
