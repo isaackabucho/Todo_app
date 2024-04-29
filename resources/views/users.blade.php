@@ -20,20 +20,20 @@
         </div>
     </x-slot>
     
+    <div class="p-12">
+        @livewire('user')
+
+    </div>
 
     <div class="container mx-auto py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="mx-auto sm:px-6">
             <div class="relative flex">
-            
 
+                
                 {{-- Todo list section --}}
-                <div class="w-full">
-                    <div class="overflow-hidden shadow-sm sm:rounded-lg max-w-screen-sm mx-auto">
-                        <div class="text-gray-900 dark:text-gray-100">
-                            @livewire('todo')
-                        </div>
-                    </div>
-                </div>
+
+                
+                
                 
                 {{-- Toggle sidebar button --}}
                 <div class="absolute top-0 right-0 mt-4 mr-4 sm:hidden">
