@@ -17,8 +17,17 @@ This project is a simple Todo app built with Laravel and Livewire for users to m
 
 ## Language
 -Laravel 11
-
 -Livewire 3
+
+## How to setup and run
+-Install Laravell and necesary dependencies
+
+-run 'php artisan serve'
+
+run 'npm run build'
+
+run 'npm run dev'
+
 ##  Todo-App Pages
 1. Landing page
 ![Landing](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/updlandingpage.png?raw=true)
