@@ -22,8 +22,6 @@ class Todo extends Component
 
     public $users;
 
-    public $showUsers = false;
-
     public function mount()
     {
         $this->users = $this->repo->getAllUsers();
@@ -50,8 +48,8 @@ class Todo extends Component
             $this->edit = $todoId;
             $this->currentEditTodo = $todo->todo;
         } else {
-            // Throw an error or display a message indicating that the user is not authorized to edit this todo
-            // For example:
+            $this->edit = $todoId;
+            $this->currentEditTodo = $todo->todo;
             session()->flash('error', 'You are not authorized to edit this todo.');
         }
     }
@@ -86,17 +84,7 @@ class Todo extends Component
 
     public function render()
     {
-        // Fetch data needed for rendering
         $todos = $this->repo->getAllTodos();
-        $users = $this->repo->getAllUsers();
-
-        if ($this->showUsers) {
-            // Render the users section
-            return view('livewire.users', compact('users'));
-        } else {
-            // Render the todos section
-            return view('livewire.todo', compact('todos'));
-        }
+        return view('livewire.todo', compact('todos'));
     }
-
 }

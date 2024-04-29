@@ -137,10 +137,10 @@
                         </div>
                     </main> --}}
                     <!-- Page Content -->
-                        <main class="flex-grow">
-                            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8">
+                        <main class="flex-grow p-5">
+                            <div class="max-w-7xl mx-auto py-6 sm:px-6 lg:px-8 ">
                                 <!-- Your custom content here -->
-                                <div class="px-4 py-6 bg-white shadow-lg sm:rounded-lg">
+                                <div class="px-4 py-6 bg-white shadow-lg sm:rounded-lg" style="display: grid;justify-content: space-around;justify-items:center">
                                     <!-- Your custom welcome content here -->
                                     <h1 class="text-3xl font-semibold text-gray-900">Welcome to Smart Todo App</h1>
                                     <p class="mt-4 text-gray-600">Start managing your tasks efficiently!</p>
