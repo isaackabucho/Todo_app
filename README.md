@@ -42,12 +42,12 @@ run 'npm run dev'
 ![User dashboard](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/updated_dashboard.png?raw=true)
 
 5. Edit Todo
-![Edit Todo](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/Edit_todo.png?raw=true)
+![Edit Todo](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/update_todo.png?raw=true)
 
-6. Admin dashboard
+7. Admin dashboard
 ![Admin dashboard](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/Admin_dashboard.png?raw=true)
 
-7. List and add Users
+8. List and add Users
 ![Users](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/user_list.png?raw=true)
 
 
