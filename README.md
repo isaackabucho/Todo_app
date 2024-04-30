@@ -10,7 +10,7 @@
 
 
 # A Todo-List App
-This project is a simple Todo app built with Laravel and Livewire for users to manage teheir todos.
+This project is a simple Todo app built with Laravel and Livewire for users to manage their tasks.
 
 
 
