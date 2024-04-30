@@ -24,12 +24,6 @@ class TodoRepo
         }
     }
 
-    // public function getTodo($todoId){
-    //     return auth()->user()->todos()->find($todoId);
-    // }
-
-    
-
     public function getTodo($todoId)
     {
         if(auth()->user()->role==="Admin"){

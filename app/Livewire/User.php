@@ -41,19 +41,15 @@ class User extends Component
     
     public function editUser($userId)
     {
-    // Find the user by ID
     $user = UserModel::findOrFail($userId);
 
-    // Populate the form fields with the user's current data
     $this->name = $user->name;
     $this->email = $user->email;
     $this->role = $user->role;
     $this->password=$user->password;
 
-    // Store the user ID in a hidden field for identification during update
     $this->userId = $userId;
 
-    // Set a flag to indicate that the form is in edit mode
     $this->editMode = true;
     }
 
@@ -67,22 +63,17 @@ class User extends Component
             'password' => 'required|string|min:8',
         ]);
 
-        // Find the user by ID
         $user = UserModel::findOrFail($this->userId);
 
-        // Update the user data
         $user->update($validatedData);
 
-        // Reset form fields and edit mode
         $this->resetFormFields();
 
-        // Refresh the user list
         $this->render();
     }
 
     public function cancelEdit()
     {
-        // Reset form fields and edit mode
         $this->resetFormFields();
     }
 
