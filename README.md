@@ -39,7 +39,7 @@ run 'npm run dev'
 ![Register](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/Register_page.png?raw=true)
 
 4. User dashboard
-![User dashboard](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/User_dashboard.png?raw=true)
+![User dashboard](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/updated_dashboard.png?raw=true)
 
 5. Edit Todo
 ![Edit Todo](https://github.com/isaackabucho/Todo_app/blob/main/TodoScreenshots/Edit_todo.png?raw=true)
